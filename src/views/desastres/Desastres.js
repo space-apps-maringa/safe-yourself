@@ -60,9 +60,11 @@ export default class Desastres extends React.Component {
         <Transition shared={item.shared}>
           <Image source={item.image} style={styles.rowImage} />
         </Transition>
-        <View style={styles.rowTextContainer}>
-          <Text style={styles.rowText}>{item.title}</Text>
-        </View>
+        <Transition shared={`${item.shared}title`}>
+          <View style={styles.rowTextContainer}>
+            <Text style={styles.rowText}>{item.title}</Text>
+          </View>
+        </Transition>
       </TouchableOpacity>
     )
   }

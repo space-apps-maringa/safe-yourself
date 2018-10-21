@@ -68,11 +68,13 @@ export default class Tsunami extends React.Component {
               blurRadius={2}
             />
           </Transition>
-          <View style={styles.textContainer}>
-            <Text style={[styles.title, { color: '#fff' }]}>
-              O que é <Text style={{ fontWeight: '900' }}> Tsunami?</Text>
-            </Text>
-          </View>
+          <Transition shared="tsunamititle">
+            <View style={styles.textContainer}>
+              <Text style={[styles.title, { color: '#fff' }]}>
+                O que é <Text style={{ fontWeight: '900' }}> Tsunami?</Text>
+              </Text>
+            </View>
+          </Transition>
         </View>
         <Text style={[styles.text, { padding: 20, textAlign: 'justify' }]}>
           Um Tsunami é uma onda causada pelo movimento repentino do fundo do
