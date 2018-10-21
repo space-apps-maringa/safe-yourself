@@ -17,11 +17,6 @@ export default class Desastres extends React.Component {
   get desastres() {
     return [
       {
-        id: '1',
-        title: 'Tsunamis',
-        image: require('../../../assets/desastres/tsunami.jpg')
-      },
-      {
         id: '2',
         title: 'Tornados',
         image: require('../../../assets/desastres/tornado.jpg')
@@ -30,6 +25,12 @@ export default class Desastres extends React.Component {
         id: '3',
         title: 'Deslizamentos',
         image: require('../../../assets/desastres/deslizamento.jpeg')
+      },
+      {
+        id: '1',
+        title: 'Tsunamis',
+        shared: 'tsunami',
+        image: require('../../../assets/desastres/tsunami.jpg')
       },
       {
         id: '4',
@@ -50,17 +51,19 @@ export default class Desastres extends React.Component {
   }
 
   onPressItem = item => {
-    console.log(item)
+    this.props.navigation.navigate('Tsunami')
   }
 
   renderItem = ({ item }) => {
     return (
-      <TouchableOpacity onPress={() => this.onPressItem(item)}>
-        <Image source={item.image} style={styles.rowImage} />
-        <View style={styles.rowTextContainer}>
-          <Text style={styles.rowText}>{item.title}</Text>
-        </View>
-      </TouchableOpacity>
+      <Transition shared={item.shared}>
+        <TouchableOpacity onPress={() => this.onPressItem(item)}>
+          <Image source={item.image} style={styles.rowImage} />
+          <View style={styles.rowTextContainer}>
+            <Text style={styles.rowText}>{item.title}</Text>
+          </View>
+        </TouchableOpacity>
+      </Transition>
     )
   }
 

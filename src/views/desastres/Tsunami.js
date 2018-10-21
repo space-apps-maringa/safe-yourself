@@ -9,7 +9,7 @@ import {
   ScrollView
 } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
-import { FloatingAction } from 'react-native-floating-action'
+import { Transition } from 'react-navigation-fluid-transitions'
 
 export default class Tsunami extends React.Component {
   get acoes() {
@@ -61,11 +61,13 @@ export default class Tsunami extends React.Component {
     return (
       <ScrollView>
         <View>
-          <Image
-            source={require('../../../assets/desastres/tsunami.jpg')}
-            style={styles.image}
-            blurRadius={2}
-          />
+          <Transition shared="tsunami">
+            <Image
+              source={require('../../../assets/desastres/tsunami.jpg')}
+              style={styles.image}
+              blurRadius={2}
+            />
+          </Transition>
           <View style={styles.textContainer}>
             <Text style={[styles.title, { color: '#fff' }]}>
               O que é <Text style={{ fontWeight: '900' }}> Tsunami?</Text>
