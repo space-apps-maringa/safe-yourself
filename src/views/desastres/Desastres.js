@@ -69,7 +69,6 @@ export default class Desastres extends React.Component {
       <Transition appear="horizontal">
         <View style={styles.container}>
           <FlatList
-            style={{ paddingTop: 20 }}
             data={this.desastres}
             keyExtractor={p => p.id}
             renderItem={this.renderItem}
@@ -78,14 +77,14 @@ export default class Desastres extends React.Component {
           <FloatingAction
             floatingIcon={
               <Ionicons
-                name="ios-jet"
+                name="ios-star"
                 size={30}
                 style={{ marginTop: 2 }}
                 color="#fff"
               />
             }
             showBackground={false}
-            color="#5291F4"
+            color="#8240bc"
             distanceToEdge={15}
             onPressMain={() => {}}
           />
