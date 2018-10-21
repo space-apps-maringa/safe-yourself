@@ -42,9 +42,12 @@ export default class Welcome extends Component {
           <Text style={styles.subtitle}>Seja um super herói!</Text>
         </View>
       </Transition>
-      <Transition appear="vertical" delay>
+      <Transition appear="vertical" disappear="bottom" delay>
         <View style={{ width: '100%' }}>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => this.props.navigation.navigate('Desastres')}
+          >
             <Text style={styles.buttonText}>SOBREVIVER</Text>
             <Ionicons
               size={20}
