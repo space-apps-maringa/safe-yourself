@@ -6,7 +6,7 @@ import {
   Text,
   Image,
   Dimensions,
-  TouchableOpacity,
+  TouchableWithoutFeedback,
   Platform
 } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
@@ -56,16 +56,18 @@ export default class Desastres extends React.Component {
 
   renderItem = ({ item }) => {
     return (
-      <TouchableOpacity onPress={() => this.onPressItem(item)}>
-        <Transition shared={item.shared}>
-          <Image source={item.image} style={styles.rowImage} />
-        </Transition>
-        <Transition shared={`${item.shared}title`}>
-          <View style={styles.rowTextContainer}>
-            <Text style={styles.rowText}>{item.title}</Text>
-          </View>
-        </Transition>
-      </TouchableOpacity>
+      <TouchableWithoutFeedback onPress={() => this.onPressItem(item)}>
+        <View>
+          <Transition shared={item.shared}>
+            <Image source={item.image} style={styles.rowImage} />
+          </Transition>
+          <Transition shared={`${item.shared}title`}>
+            <View style={styles.rowTextContainer}>
+              <Text style={styles.rowText}>{item.title}</Text>
+            </View>
+          </Transition>
+        </View>
+      </TouchableWithoutFeedback>
     )
   }
 
