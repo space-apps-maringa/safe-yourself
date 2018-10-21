@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   },
   overlay: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'rgba(130, 64, 188,.5)'
+    backgroundColor: 'rgba(130, 64, 188,.7)'
   },
   subtitleContainer: {
     paddingHorizontal: 40,
