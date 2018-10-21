@@ -36,8 +36,7 @@ export default class Welcome extends Component {
       <Transition appear="horizontal" delay>
         <View style={styles.subtitleContainer}>
           <Text style={styles.subtitle}>
-            Aqui você aprende a ficar seguro em frente a qualquer desastre
-            natural.
+            Aqui você aprende a ficar seguro frente a qualquer desastre natural.
           </Text>
           <Text style={styles.subtitle}>Seja um super herói!</Text>
         </View>
