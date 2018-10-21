@@ -9,7 +9,7 @@ import {
   TouchableWithoutFeedback,
   Platform
 } from 'react-native'
-import { Ionicons } from '@expo/vector-icons'
+import { FontAwesome } from '@expo/vector-icons'
 import { FloatingAction } from 'react-native-floating-action'
 import { Transition } from 'react-navigation-fluid-transitions'
 
@@ -83,10 +83,10 @@ export default class Desastres extends React.Component {
           />
           <FloatingAction
             floatingIcon={
-              <Ionicons
-                name="ios-star"
+              <FontAwesome
+                name="gamepad"
                 size={30}
-                style={{ marginTop: 2 }}
+                style={{ marginBottom: 2 }}
                 color="#fff"
               />
             }
