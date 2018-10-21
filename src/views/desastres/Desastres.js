@@ -22,15 +22,15 @@ export default class Desastres extends React.Component {
         image: require('../../../assets/desastres/tornado.jpg')
       },
       {
-        id: '3',
-        title: 'Deslizamentos',
-        image: require('../../../assets/desastres/deslizamento.jpeg')
-      },
-      {
         id: '1',
         title: 'Tsunamis',
         shared: 'tsunami',
         image: require('../../../assets/desastres/tsunami.jpg')
+      },
+      {
+        id: '3',
+        title: 'Deslizamentos',
+        image: require('../../../assets/desastres/deslizamento.jpeg')
       },
       {
         id: '4',
@@ -71,7 +71,7 @@ export default class Desastres extends React.Component {
 
   render() {
     return (
-      <Transition appear="horizontal">
+      <Transition>
         <View style={styles.container}>
           <FlatList
             data={this.desastres}
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
   rowTextContainer: {
     flex: 1,
     backgroundColor: 'rgba(0,0,0,.5)',
-    height: 130,
+    height: 200,
     justifyContent: 'center'
   },
   rowText: {
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
   },
   rowImage: {
     position: 'absolute',
-    height: 130,
+    height: 200,
     width: Dimensions.get('window').width
   },
   separator: {
