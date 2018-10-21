@@ -56,14 +56,14 @@ export default class Desastres extends React.Component {
 
   renderItem = ({ item }) => {
     return (
-      <Transition shared={item.shared}>
-        <TouchableOpacity onPress={() => this.onPressItem(item)}>
+      <TouchableOpacity onPress={() => this.onPressItem(item)}>
+        <Transition shared={item.shared}>
           <Image source={item.image} style={styles.rowImage} />
-          <View style={styles.rowTextContainer}>
-            <Text style={styles.rowText}>{item.title}</Text>
-          </View>
-        </TouchableOpacity>
-      </Transition>
+        </Transition>
+        <View style={styles.rowTextContainer}>
+          <Text style={styles.rowText}>{item.title}</Text>
+        </View>
+      </TouchableOpacity>
     )
   }
 
