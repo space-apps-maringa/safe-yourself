@@ -93,7 +93,7 @@ export default class Desastres extends React.Component {
             showBackground={false}
             color="#8240bc"
             distanceToEdge={15}
-            onPressMain={() => {}}
+            onPressMain={() => this.props.navigation.navigate('Perfil')}
           />
         </View>
       </Transition>
