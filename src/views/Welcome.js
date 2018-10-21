@@ -39,7 +39,7 @@ export default class Welcome extends Component {
             Aqui você aprende a ficar seguro em frente a qualquer desastre
             natural.
           </Text>
-          <Text style={styles.subtitle}>Seja um super herói</Text>
+          <Text style={styles.subtitle}>Seja um super herói!</Text>
         </View>
       </Transition>
       <Transition appear="vertical" delay>
