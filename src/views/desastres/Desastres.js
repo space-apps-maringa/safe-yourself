@@ -8,6 +8,8 @@ import {
   Dimensions,
   TouchableOpacity
 } from 'react-native'
+import { Ionicons } from '@expo/vector-icons'
+import { FloatingAction } from 'react-native-floating-action'
 
 export default class Desastres extends React.Component {
   get desastres() {
@@ -62,18 +64,35 @@ export default class Desastres extends React.Component {
 
   render() {
     return (
-      <FlatList
-        style={{ paddingTop: 20 }}
-        data={this.desastres}
-        keyExtractor={p => p.id}
-        renderItem={this.renderItem}
-        ItemSeparatorComponent={() => <View style={styles.separator} />}
-      />
+      <View style={styles.container}>
+        <FlatList
+          style={{ paddingTop: 20 }}
+          data={this.desastres}
+          keyExtractor={p => p.id}
+          renderItem={this.renderItem}
+          ItemSeparatorComponent={() => <View style={styles.separator} />}
+        />
+        <FloatingAction
+          floatingIcon={
+            <Ionicons
+              name="ios-jet"
+              size={30}
+              style={{ marginTop: 2 }}
+              color="#fff"
+            />
+          }
+          showBackground={false}
+          color="#5291F4"
+          distanceToEdge={15}
+          onPressMain={() => {}}
+        />
+      </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
+  container: { flex: 1 },
   rowTextContainer: {
     flex: 1,
     backgroundColor: 'rgba(0,0,0,.5)',
